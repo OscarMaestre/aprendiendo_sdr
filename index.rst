@@ -39,3 +39,25 @@ Ondas
 ---------------
 
 
+Para enviar y recibir datos se envían ondas. Estas ondas suelen basarse en las funciones seno y coseno. En la figura siguiente puede verse una función seno (obsérvese que empieza siempre en 0):
+
+.. figure:: programas/02-sinusoidal.png
+   :alt: Gráfica de la función seno.
+
+   Gráfica de la función seno.
+
+De la misma manera, podemos ver una representación de la función coseno, que es muy parecida con la diferencia de que empieza siempre en el punto más alto.
+
+.. figure:: programas/02-cosinusoidal.png
+   :alt: Gráfica de la función coseno.
+
+   Gráfica de la función coseno.
+
+
+Podemos compararlas en el mismo gráfico y ver la diferencia:
+
+
+.. figure:: programas/02-seno-y-coseno.png
+   :alt: Comparativa entre funciones de onda
+
+   Comparativa entre funciones de onda

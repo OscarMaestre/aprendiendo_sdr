@@ -12,13 +12,18 @@ class GeneradorOndas(object):
         self.x_maximo=x_maximo
         self.tiempo=np.linspace(x_minimo, x_maximo, num_muestras) 
         self.series=[]
-        self.titulo=[]
+        self.titulos=[]
         self.colores=["red", "green", "blue", "black", "cyan", "magenta"]
     
     def anadir_serie(self, amplitud, frecuencia, titulo):
         onda = amplitud * np.sin(2 * np.pi * frecuencia * self.tiempo)
         self.series.append(onda)
-        self.titulo.append(titulo)
+        self.titulos.append(titulo)
+
+    def anadir_serie_coseno(self, amplitud, frecuencia, titulo):
+        onda = amplitud * np.cos(2 * np.pi * frecuencia * self.tiempo)
+        self.series.append(onda)
+        self.titulos.append(titulo)
     
     def anadir_serie_np(self, np, titulo):
         self.series.append(np)
@@ -27,13 +32,13 @@ class GeneradorOndas(object):
     def guardar_grafico(self, nombre_archivo):
         # Configuración de la figura
         fig = plt.figure(figsize=(10, 5))
-        plt.title("Onda Sinusoidal", fontsize=14)
+        plt.title(self.titulo, fontsize=14)
         plt.xlabel("Tiempo (s)", fontsize=12)
         plt.ylabel("Amplitud", fontsize=12)
         plt.grid(True, linestyle='--', alpha=0.7)
 
        
-        for (serie, titulo, color) in zip(self.series, self.titulo, self.colores):
+        for (serie, titulo, color) in zip(self.series, self.titulos, self.colores):
             # Dibujar la onda
             plt.plot(self.tiempo, serie, color, linewidth=2, label=titulo)
         
